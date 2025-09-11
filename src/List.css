@@ -1,0 +1,137 @@
+/* Import Google Fonts (Optional but recommended for modern look) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif; /* ใช้ Font ที่ทันสมัย */
+    background-color: #eef2f6; /* สีพื้นหลังอ่อนๆ */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.list-container {
+    max-width: 1200px; /* เพิ่ม max-width เพื่อรองรับจอใหญ่ขึ้น */
+    margin: 40px auto; /* เพิ่ม margin บน-ล่าง */
+    padding: 30px 25px; /* เพิ่ม padding */
+    background: #ffffff; /* เปลี่ยนเป็นสีขาวล้วน */
+    border-radius: 15px; /* เพิ่มความโค้งมน */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* ปรับเงาให้ลึกและนุ่มนวลขึ้น */
+}
+
+.list-container > p:first-of-type { /* เลือกเฉพาะ p ตัวแรกที่เป็น "Search" */
+    font-size: 1.4rem; /* เพิ่มขนาดตัวอักษร */
+    font-weight: 600; /* ทำให้เข้มขึ้น */
+    margin-bottom: 15px;
+    color: #333; /* ปรับสีให้เข้มขึ้น */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+}
+
+.list-search {
+    width: calc(100% - 28px); /* คำนวณความกว้างใหม่เพื่อรวม padding */
+    padding: 12px 14px; /* เพิ่ม padding */
+    margin-bottom: 35px; /* เพิ่มระยะห่างด้านล่าง */
+    font-size: 1.1rem; /* เพิ่มขนาดตัวอักษร */
+    border: 1px solid #dcdcdc; /* สีขอบอ่อนลง */
+    border-radius: 9px; /* เพิ่มความโค้งมน */
+    outline: none;
+    transition: all 0.3s ease-in-out; /* เพิ่ม transition */
+    background: #f9f9f9; /* สีพื้นหลังของ input */
+    color: #333;
+}
+
+.list-search::placeholder {
+    color: #999; /* สี placeholder */
+}
+
+.list-search:focus {
+    border-color: #4CAF50; /* เปลี่ยนสีขอบเมื่อ focus ให้ดูทันสมัยขึ้น (สีเขียว) */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2); /* เพิ่มเงาเมื่อ focus */
+    background: #ffffff;
+}
+
+.list-books {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    /* ปรับ grid-template-columns ให้ยืดหยุ่นมากขึ้น และรองรับขนาดที่เล็กลง */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; /* เพิ่มระยะห่างระหว่าง Card */
+}
+
+.list-books li {
+    background: #ffffff;
+    border-radius: 12px; /* เพิ่มความโค้งมนของ Card */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* ปรับเงา Card ให้ลึกขึ้น */
+    padding: 20px; /* เพิ่ม padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* เพิ่ม transition สำหรับ hover */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    border: 1px solid #eee; /* เพิ่มขอบบางๆ */
+}
+
+.list-books li:hover {
+    transform: translateY(-8px); /* ยก Card ขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* ทำให้เงาชัดขึ้นเมื่อ hover */
+}
+
+.list-books img {
+    border-radius: 8px; /* เพิ่มความโค้งมนของรูป */
+    margin-bottom: 18px; /* เพิ่มระยะห่างด้านล่างรูป */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ปรับเงารูปภาพ */
+    background: #e9ecef;
+    width: 150px; /* กำหนดขนาดภาพให้คงที่ */
+    height: 225px; /* กำหนดความสูงภาพให้คงที่ (อัตราส่วน 2:3) */
+    object-fit: cover; /* ทำให้รูปภาพเต็มพื้นที่โดยไม่ผิดเพี้ยน */
+}
+
+.list-books p {
+    margin: 5px 0; /* ปรับ margin */
+    font-size: 0.95rem; /* ปรับขนาดตัวอักษรของข้อมูล */
+    color: #555; /* ปรับสีตัวอักษรให้เข้มขึ้น */
+    line-height: 1.5; /* เพิ่ม line-height เพื่อให้อ่านง่าย */
+}
+
+.list-books p:first-of-type { /* ชื่อหนังสือ */
+    font-weight: 600; /* ทำให้ชื่อหนังสือเข้มขึ้น */
+    color: #333; /* สีชื่อหนังสือ */
+    font-size: 1.15rem; /* ขนาดชื่อหนังสือ */
+    margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่างชื่อหนังสือ */
+    text-transform: capitalize; /* ทำให้ตัวอักษรแรกเป็นตัวใหญ่ */
+}
+
+.list-books p:nth-of-type(2) { /* ผู้แต่ง */
+    font-style: italic; /* ทำให้ชื่อผู้แต่งเป็นตัวเอียง */
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.list-books p:nth-of-type(3) { /* ราคา */
+    font-weight: 700; /* ทำให้ราคาเข้มขึ้น */
+    color: #4CAF50; /* ใช้สีเขียวสำหรับราคา */
+    font-size: 1.1rem;
+    margin-top: 15px; /* เพิ่มระยะห่างด้านบนของราคา */
+    padding-top: 10px; /* เพิ่ม padding ด้านบน */
+    border-top: 1px solid #f0f0f0; /* เพิ่มเส้นขอบด้านบนเพื่อแยกส่วน */
+    width: 100%; /* ให้เส้นขอบเต็มความกว้าง */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .list-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .list-books {
+        grid-template-columns: 1fr; /* บนหน้าจอเล็กให้เรียงเป็นคอลัมน์เดียว */
+    }
+    .list-books li {
+        padding: 15px;
+    }
+    .list-books img {
+        width: 120px;
+        height: 180px;
+    }
+}
